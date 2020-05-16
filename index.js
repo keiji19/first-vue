@@ -42,10 +42,27 @@ var app5 = new Vue({
     }
 })
 
-
 var app6 = new Vue({
     el: '#app-6',
     data: {
         message: 'Hello Vue!'
+    }
+})
+
+Vue.component('todo-item', {
+    // todo-item コンポーネントはカスタム属性のような"プロパティ"で受け取ります
+    // このプロパティはtodoを呼ばれます
+    props: ['todo'],
+    template: '<li> {{ todo.text }}</li>'
+})
+
+var app7 = new Vue({
+    el: '#app-7',
+    data: {
+        groceryList: [
+            { id: 0, text: 'vegetable' },
+            { id: 1, text: 'Cheese' },
+            { id: 2, text: 'Whatever else humans are supporsed to eat' }
+        ]
     }
 })
